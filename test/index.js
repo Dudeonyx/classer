@@ -106,8 +106,8 @@ describe('Class lister test.', () => {
         'App_App__3TjUG misspelt-class App_redDiv_fg3AS fake-class App_blue-div_jYaS7 App_d-flex-c__xpDp1',
     };
     assert(
-      classes('App misspelt-class redDiv fake-class blue-div d-flex-c') ===
-        expectedVal,
+      classes('App misspelt-class redDiv fake-class blue-div d-flex-c').className ===
+        expectedVal.className,
       'sub-function not returning spaced string of valid classes when input is a spaced string'
     );
   });
