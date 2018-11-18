@@ -1,0 +1,60 @@
+{
+  "name": "classer",
+  "version": "0.1.0",
+  "description": "A module to increase ease and readability when adding multiple classes from CSS modules",
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "test": "npm run lint && npm run cover",
+    "test:prod": "cross-env BABEL_ENV=production npm run test",
+    "test:only": "mocha --require babel-core/register --require babel-polyfill --recursive",
+    "test:watch": "npm test -- --watch",
+    "test:examples": "node examples/",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- --require babel-core/register --require babel-polyfill --recursive",
+    "lint": "eslint src test",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dudeonyx/classer"
+  },
+  "keywords": [
+    "classer",
+    "css",
+    "module",
+    "class",
+    "lister",
+    "react",
+    "node",
+    "javascript"
+  ],
+  "author": "Umeayo Onyekachukwu <umeayo.o.h@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dudeonyx/classer/issues"
+  },
+  "homepage": "https://github.com/Dudeonyx/classer#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.0",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.11.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.2"
+  }
+}
